@@ -1,4 +1,4 @@
-package selectionSort
+package shellSort
 
 import (
 	"fmt"
@@ -7,10 +7,10 @@ import (
 	"testing"
 )
 
-func TestBubbleSort(t *testing.T) {
-	seq := selectionSort(sequence.Seq)
+func TestShellSort(t *testing.T) {
+	seq := shellSort(sequence.Seq)
 	if is_sorted := sort.IsSorted(seq); !is_sorted {
-		t.Errorf("selection sort failed")
+		t.Errorf("shell sort failed")
 	}
 	fmt.Printf("%v\n", seq)
 }

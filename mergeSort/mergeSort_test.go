@@ -1,4 +1,4 @@
-package selectionSort
+package mergeSort
 
 import (
 	"fmt"
@@ -7,10 +7,10 @@ import (
 	"testing"
 )
 
-func TestBubbleSort(t *testing.T) {
-	seq := selectionSort(sequence.Seq)
+func TestMergeSort(t *testing.T) {
+	seq := mergeSort(sequence.Seq)
 	if is_sorted := sort.IsSorted(seq); !is_sorted {
-		t.Errorf("selection sort failed")
+		t.Errorf("merge sort failed")
 	}
 	fmt.Printf("%v\n", seq)
 }
