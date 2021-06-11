@@ -8,12 +8,12 @@ func selectionSort(arr sequence.Sequence) sequence.Sequence {
 	for i := 0; i < length-1; i++ {
 		min := i
 		for j := i + 1; j < length; j++ {
-			if arr[j] < arr[min] {
+			if arr.Less(j, min) {
 				min = j
 			}
 		}
 		if min != i {
-			arr[min], arr[i] = arr[i], arr[min]
+			arr.Swap(min, i)
 		}
 	}
 	return arr

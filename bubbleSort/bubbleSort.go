@@ -14,7 +14,6 @@ func bubbleSort(arr sequence.Sequence) sequence.Sequence {
 			}
 		}
 	}
-
 	return arr
 }
 
@@ -30,6 +29,7 @@ func bubbleSortOptimize(arr sequence.Sequence) sequence.Sequence {
 				flag = false
 			}
 		}
+
 		// 内循环没有改变任何元素的顺序, 即为排序成功, 不需要继续循环
 		if flag {
 			break

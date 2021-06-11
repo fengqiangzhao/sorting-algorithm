@@ -8,7 +8,7 @@ func quickSort(arr sequence.Sequence) sequence.Sequence {
 
 func _quickSort(arr sequence.Sequence, left, right int) sequence.Sequence {
 	if left < right {
-		partitionIndex := partition3(arr, left, right)
+		partitionIndex := partition2(arr, left, right)
 		_quickSort(arr, left, partitionIndex-1)
 		_quickSort(arr, partitionIndex+1, right)
 	}
@@ -26,7 +26,10 @@ func partition(arr sequence.Sequence, left, right int) int {
 			arr[i], arr[index] = arr[index], arr[i]
 		}
 	}
-	arr[pivot], arr[index] = arr[index], arr[pivot]
+
+	if pivot != index {
+		arr[pivot], arr[index] = arr[index], arr[pivot]
+	}
 	return index
 }
 
@@ -52,13 +55,20 @@ func partition3(arr sequence.Sequence, left, right int) int {
 	j := right
 
 	for i != j {
-		for ; arr[j] >= arr[pivot] && i < j; j-- {continue}
+		for ; arr[j] >= arr[pivot] && i < j; j-- {
+			continue
+		}
 
-		for ; arr[i] <= arr[pivot] && i < j; i++ {continue}
+		for ; arr[i] <= arr[pivot] && i < j; i++ {
+			continue
+		}
 
-		arr[i], arr[j] = arr[j], arr[i]
-
+		if i != j {
+			arr[i], arr[j] = arr[j], arr[i]
+		}
 	}
-	arr[i], arr[pivot] = arr[pivot], arr[i]
+	if i != pivot {
+		arr[i], arr[pivot] = arr[pivot], arr[i]
+	}
 	return i
 }

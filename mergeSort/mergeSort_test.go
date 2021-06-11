@@ -9,8 +9,15 @@ import (
 
 func TestMergeSort(t *testing.T) {
 	seq := mergeSort(sequence.Seq)
-	if is_sorted := sort.IsSorted(seq); !is_sorted {
+	if isSorted := sort.IsSorted(seq); !isSorted {
 		t.Errorf("merge sort failed")
 	}
 	fmt.Printf("%v\n", seq)
+}
+
+func TestMergeSortBottomUp(t *testing.T) {
+	seq := sequence.Seq
+	seq.Show()
+	mergeSortBottomUp(seq)
+	seq.Show()
 }

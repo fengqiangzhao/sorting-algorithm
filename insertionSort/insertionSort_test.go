@@ -1,6 +1,7 @@
 package insertionSort
 
 import (
+	"fmt"
 	"sort"
 	"sort_algorithm/sequence"
 	"testing"
@@ -8,7 +9,16 @@ import (
 
 func TestInsertionSort(t *testing.T) {
 	arr := insertionSort(sequence.Seq)
-	if is_sorted := sort.IsSorted(arr); !is_sorted {
+	if isSorted := sort.IsSorted(arr); !isSorted {
 		t.Errorf("insertion sort failed")
 	}
+	fmt.Printf("%v\n", arr)
+}
+
+func TestInsertionSortII(t *testing.T) {
+	arr := insertionSortII(sequence.Seq)
+	if isSorted := sort.IsSorted(arr); !isSorted {
+		t.Errorf("insertion sort II failed")
+	}
+	fmt.Printf("%v\n", arr)
 }

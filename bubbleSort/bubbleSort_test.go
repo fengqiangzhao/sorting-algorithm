@@ -9,7 +9,7 @@ import (
 
 func TestBubbleSort(t *testing.T) {
 	seq := bubbleSort(sequence.Seq)
-	if is_sorted := sort.IsSorted(seq); !is_sorted {
+	if isSorted := sort.IsSorted(seq); !isSorted {
 		t.Errorf("bubble sort failed")
 	}
 	fmt.Printf("%v\n", seq)
@@ -17,7 +17,7 @@ func TestBubbleSort(t *testing.T) {
 
 func Test_bubbleSortOptimize(t *testing.T) {
 	seq := bubbleSortOptimize(sequence.Seq)
-	if is_sorted := sort.IsSorted(seq); !is_sorted {
+	if isSorted := sort.IsSorted(seq); !isSorted {
 		t.Errorf("optimize bubble sort failed")
 	}
 	fmt.Printf("%v\n", seq)

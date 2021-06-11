@@ -1,16 +1,31 @@
 package shellSort
 
 import (
-	"fmt"
 	"sort"
 	"sort_algorithm/sequence"
 	"testing"
 )
 
-func TestShellSort(t *testing.T) {
-	seq := shellSort(sequence.Seq)
-	if is_sorted := sort.IsSorted(seq); !is_sorted {
+func TestShellSortOptimize(t *testing.T) {
+	a := sequence.Seq
+	a.Show()
+
+	sortedArr := shellSortOptimize(a)
+	sortedArr.Show()
+
+	if isSorted := sort.IsSorted(sortedArr); !isSorted {
 		t.Errorf("shell sort failed")
 	}
-	fmt.Printf("%v\n", seq)
+}
+
+func TestShellSort(t *testing.T) {
+	a := sequence.Seq
+	a.Show()
+
+	sortedArr := shellSort(a)
+	sortedArr.Show()
+
+	if isSorted := sort.IsSorted(sortedArr); !isSorted {
+		t.Errorf("shell sort failed")
+	}
 }

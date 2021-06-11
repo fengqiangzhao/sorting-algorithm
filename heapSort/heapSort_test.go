@@ -1,4 +1,4 @@
-package quickSort
+package heapSort
 
 import (
 	"fmt"
@@ -7,10 +7,12 @@ import (
 	"testing"
 )
 
-func TestQuickSort(t *testing.T) {
-	seq := quickSort(sequence.Seq)
+func TestHeapSort(t *testing.T) {
+	arr := sequence.Seq
+	seq := heapSort(arr)
 	if isSorted := sort.IsSorted(seq); !isSorted {
-		t.Errorf("quick sort failed")
+		t.Errorf("heap sort failed")
 	}
 	fmt.Printf("%v\n", seq)
+
 }

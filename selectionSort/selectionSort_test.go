@@ -7,9 +7,9 @@ import (
 	"testing"
 )
 
-func TestBubbleSort(t *testing.T) {
+func TestSelectionSort(t *testing.T) {
 	seq := selectionSort(sequence.Seq)
-	if is_sorted := sort.IsSorted(seq); !is_sorted {
+	if isSorted := sort.IsSorted(seq); !isSorted {
 		t.Errorf("selection sort failed")
 	}
 	fmt.Printf("%v\n", seq)
